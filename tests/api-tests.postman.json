@@ -1620,62 +1620,15 @@
           },
           "response": []
         },
-        {
-          "name": "Follow Profile",
-          "event": [{
-            "listen": "test",
-            "script": {
-              "type": "text/javascript",
-              "exec": [
-                "if (!(environment.isIntegrationTest)) {",
-                "var is200Response = responseCode.code === 200;",
-                "",
-                "tests['Response code is 200 OK'] = is200Response;",
-                "",
-                "if(is200Response){",
-                "    var responseJSON = JSON.parse(responseBody);",
-                "",
-                "    tests['Response contains \"profile\" property'] = responseJSON.hasOwnProperty('profile');",
-                "    ",
-                "    var profile = responseJSON.profile || {};",
-                "    ",
-                "    tests['Profile has \"username\" property'] = profile.hasOwnProperty('username');",
-                "    tests['Profile has \"image\" property'] = profile.hasOwnProperty('image');",
-                "    tests['Profile has \"following\" property'] = profile.hasOwnProperty('following');",
-                "    tests['Profile\\'s \"following\" property is true'] = profile.following === true;",
-                "}",
-                "}",
-                ""
-              ]
-            }
-          }],
-          "request": {
-            "url": "{{apiUrl}}/profiles/johnjacob/follow",
-            "method": "POST",
-            "header": [{
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest",
-                "description": ""
-              },
-              {
-                "key": "Authorization",
-                "value": "Token {{token}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\"user\":{\"email\":\"john@jacob.com\"}}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
+
+
+
+
+
+
+
+
+
         {
           "name": "Unfollow Profile",
           "event": [{
