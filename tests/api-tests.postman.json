@@ -1525,55 +1525,18 @@
           },
           "response": []
         },
-        {
-          "name": "Create Comment for Article",
-          "event": [{
-            "listen": "test",
-            "script": {
-              "type": "text/javascript",
-              "exec": [
-                "var responseJSON = JSON.parse(responseBody);",
-                "",
-                "tests['Response contains \"comment\" property'] = responseJSON.hasOwnProperty('comment');",
-                "",
-                "var comment = responseJSON.comment || {};",
-                "",
-                "tests['Comment has \"id\" property'] = comment.hasOwnProperty('id');",
-                "tests['Comment has \"body\" property'] = comment.hasOwnProperty('body');",
-                "tests['Comment has \"createdAt\" property'] = comment.hasOwnProperty('createdAt');",
-                "tests['\"createdAt\" property is an ISO 8601 timestamp'] = new Date(comment.createdAt).toISOString() === comment.createdAt;",
-                "tests['Comment has \"author\" property'] = comment.hasOwnProperty('author');",
-                ""
-              ]
-            }
-          }],
-          "request": {
-            "url": "{{apiUrl}}/articles/{{slug}}/comments",
-            "method": "POST",
-            "header": [{
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest",
-                "description": ""
-              },
-              {
-                "key": "Authorization",
-                "value": "Token {{token}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\"comment\":{\"body\":\"Thank you so much!\"}}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         {
           "name": "Delete Comment for Article",
           "request": {
